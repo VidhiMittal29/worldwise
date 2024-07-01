@@ -2,7 +2,7 @@
   "name": "worldwise",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://gitname.github.io/worldwise",
+  "homepage": "https://gitname.github.io/worldwise/",
   "type": "module",
   "scripts": {
     "dev": "vite",

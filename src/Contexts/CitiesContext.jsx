@@ -70,7 +70,7 @@ function CitiesProvider({ children }) {
   useEffect(function fetchCities() {
     dispatch({ type: "loading" });
     axios
-      .get("http://localhost:9000/cities")
+      .get("https://wk8jk.wiremockapi.cloud/thing/2")
       .then((response) => {
         dispatch({ type: "cities/loaded", payload: response.data });
       })
@@ -85,7 +85,7 @@ function CitiesProvider({ children }) {
 
     dispatch({ type: "loading" });
     axios
-      .get(`http://localhost:9000/cities/${id}`)
+      .get(`https://wk8jk.wiremockapi.cloud/thing/2/${id}`)
       .then((response) => {
         dispatch({type: "city/loaded" , payload:response.data});
       })
@@ -99,7 +99,7 @@ function CitiesProvider({ children }) {
   function createCity(newCity) {
     dispatch({ type: "loading" });
     axios
-      .post(`http://localhost:9000/cities`, JSON.stringify(newCity), {
+      .post(`https://wk8jk.wiremockapi.cloud/thing/2`, JSON.stringify(newCity), {
         headers: {
           "Content-Type": "application/json",
         },
@@ -116,7 +116,7 @@ function CitiesProvider({ children }) {
   function deleteCity(id) {
     dispatch({ type: "loading" });
     axios
-      .delete(`http://localhost:9000/cities/${id}`)
+      .delete(`https://wk8jk.wiremockapi.cloud/thing/2/${id}`)
       .then(dispatch({type:"city/deleted" ,payload: id}))
       .catch((error) => {
         dispatch({ type: "rejected", payload: error.response });
